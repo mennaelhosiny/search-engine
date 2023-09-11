@@ -14,11 +14,13 @@
     <nav>
         <h2>Wikipedia Search Engine</h2>
         <div class="search">
-            <label for="input">Type something in the above search input</label>
-            <input id="input" type="text" onkeyup='validateInput(this)' placeholder="search.. ?"/>
+            <input id="input" type="text" onkeyup='validateInput(this)' placeholder="Looking for something ?"/>
+            <b id="debounce">debounce:</b>
         </div>
     </nav>
-
+    <div class="container">
+        <p>Type something in the above search input</p>
+    </div>
 </body>
 <script src="main.js"></script>
 </html>

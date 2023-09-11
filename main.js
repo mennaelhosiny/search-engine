@@ -1,4 +1,37 @@
 let resultsContainer = document.getElementsByClassName("container")[0]
+const input = document.getElementById('input')
+const debounce = document.getElementById('debounce')
+
+
+const debounceUpdate=debounceLouding(Text=>{
+    debounce.textContent=Text
+})
+
+input.addEventListener("input",(e)=>{
+    debounceUpdate(e.target.value)
+})
+
+function debounceLouding(callback,delay=1000){
+    let timeout
+    return (...args)=>{
+        clearTimeout(timeout)
+       timeout=setTimeout(()=>{
+            callback (...args)
+        },delay)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 const validateInput = (el) => {
     if(el.value === ""){
@@ -34,4 +67,5 @@ const generateResults = (searchValue, inputField) => {
             resultsContainer.innerHTML = "<p>Type something in the above search input</p>"
         }
     })
+    debounceLouding()
 }
